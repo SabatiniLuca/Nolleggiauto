@@ -11,12 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+        Schema::create('utenti', function (Blueprint $table) {
+            $table->id(); // Make userId the primary key
+            $table->string('nome');
+            $table->string('cognome');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('username', 20);
             $table->string('password');
+            $table->string('role', 10)->default('utente'); //admin, staff, utente
             $table->rememberToken();
             $table->timestamps();
         });
@@ -24,9 +27,11 @@ return new class extends Migration
 
     /**
      * Reverse the migrations.
+     *
+     * @return void
      */
-    public function down(): void
+    public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('utenti');
     }
 };
