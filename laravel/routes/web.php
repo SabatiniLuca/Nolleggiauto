@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('showAuto');
+})->name('showAuto');
+
+
+Route::view('/where', 'where')
+    ->name('where');
+
+Route::view('/who', 'who')
+    ->name('who');
