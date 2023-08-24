@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PublicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,9 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('showAuto');
-})->name('showAuto');
+Route::get('/', [PublicController::class,'showAuto'])
+    ->name('showAuto');
 
 
 Route::view('/where', 'where')

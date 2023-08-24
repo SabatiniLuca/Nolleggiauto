@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('auto', function (Blueprint $table) {
             $table->string('targa', 7)->primary();
-            $table->string('modello', 10);
+            $table->string('modello', 15);
             $table->string('marca', 20);
             $table->float('prezzoGiornaliero')->unsigned()->index();
-            $table->bigInteger('numeroPorte')->unsigned()->index();
-            $table->bigInteger('cilindrata')->unsigned();
+            $table->bigInteger('posti')->unsigned()->index();
+            $table->bigInteger('potenza')->unsigned();
             $table->string('tipoCambio', 10);
-            $table->string('optional', 50);
+            $table->string('optional', 100);
             $table->boolean('disponibilita')->default(false)->index();
             $table->text('foto')->nullable();
         });

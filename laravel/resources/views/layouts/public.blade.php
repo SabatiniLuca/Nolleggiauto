@@ -23,7 +23,7 @@
             <div id="page">
                 <div id="page-bgtop">
                     <div id="page-bgbtm">
-                        @yield('show')
+                        @yield('content')
                         <div style="clear: both;">&nbsp;</div>
                     </div>
                 </div>
@@ -36,8 +36,8 @@
                 <br> Scegli <i>Nolleggiauto</i> per un viaggio senza confini e senza pensieri.<br><br>
                 &copy; 2023 No rights reserved.<br> </p>
             </div>
-
             <!-- end #footer -->
+
         </div>
     </body>
 </html>
